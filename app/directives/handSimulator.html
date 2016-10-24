@@ -1,0 +1,26 @@
+﻿<md-button aria-label="Try a test hand" ng-disabled="!isEnabled || (selectedCards.length + selectedLandCards.length == 0)" class="md-raised md-primary medBtn" ng-click="openHandSimulator()">
+    Try a test hand
+</md-button>
+
+<div>
+  <script type="text/ng-template" id="handmodal.html">
+    <md-dialog aria-label="Test hand"  ng-cloak class="testHandDialog">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Test hand</h2>
+          <span flex></span>
+          <md-button class="md-raised md-primary medBtn" ng-click="mulligan()" aria-label="Mulligan">Mulligan</md-button>
+          <md-button class="md-raised md-primary medBtn" ng-click="nextCard()" aria-label="Draw a card">Draw a card</md-button>
+          <md-button class="md-raised md-primary medBtn" ng-click="generateNewHand()" aria-label="Generate new hand">New hand</md-button>
+          <md-button class="md-icon-button" ng-click="cancel()" aria-label="Close hand simulator">
+            <i class="fa fa-close fa-2x white"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+        <card-display card-click="markAsUsed(card)"
+                      cards="handCards" />
+      </md-dialog-content>
+    </md-dialog>
+  </script>
+</div>

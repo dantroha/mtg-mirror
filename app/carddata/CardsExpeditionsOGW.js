@@ -1,0 +1,22 @@
+﻿var ExpeditionsOGW = [
+{ Name: "Ancient Tomb", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsAncientTomb.jpg" },
+{ Name: "Cascade Bluffs", Cost: "0", Color: ["U", "R"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsCascadeBluffs.jpg" },
+{ Name: "Dust Bowl", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsDustBowl.jpg" },
+{ Name: "Eye of Ugin", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsEyeOfUgin.jpg" },
+{ Name: "Fetid Heath", Cost: "0", Color: ["W", "B"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsFetidHeath.jpg" },
+{ Name: "Firelit Thicket", Cost: "0", Color: ["R", "G"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsFireLitThicket.jpg" },
+{ Name: "Flooded Grove", Cost: "0", Color: ["U", "G"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsFloodedGrove.jpg" },
+{ Name: "Forbidden Orchard", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsForbiddenOrchard.jpg" },
+{ Name: "Graven Cairns", Cost: "0", Color: ["B", "R"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsGravenCairns.jpg" },
+{ Name: "Horizon Canopy", Cost: "0", Color: ["W", "G"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsHorizonCanopy.jpg" },
+{ Name: "Kor Haven", Cost: "0", Color: ["W"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsKorHaven.jpg" },
+{ Name: "Mana Confluence", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsManaConfluence.jpg" },
+{ Name: "Mystic Gate", Cost: "0", Color: ["W", "U"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsMysticGate.jpg" },
+{ Name: "Rugged Prairie", Cost: "0", Color: ["W", "R"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsRuggedPrairie.jpg" },
+{ Name: "Strip Mine", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsSireMine.jpg" },
+{ Name: "Sunken Ruins", Cost: "0", Color: ["U", "B"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsSunkenRuins.jpg" },
+{ Name: "Tectonic Edge", Cost: "0", Color: ["C"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsTectonicEdge.jpg" },
+{ Name: "Twilight Mire", Cost: "0", Color: ["B", "G"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsTwilightMire.jpg" },
+{ Name: "Wasteland", Cost: "0", Color: ["U", "R"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsWasteland.jpg" },
+{ Name: "Wooded Bastion", Cost: "0", Color: ["W", "G"], Rarity: "M", Type: ["L"], Rating: "7", Sort: "1", Set: "BFZ", Number: "249", Image: "/Images/OGW/ExpeditionsWoodedBastion.jpg" }
+];

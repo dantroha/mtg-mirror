@@ -1,0 +1,29 @@
+﻿<section data-ng-controller="browsecards as vm">
+
+  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
+  <div class="fullLengthCol">
+    <md-card class="card center" style="margin: 1rem;">
+        <select ng-model="vm.selectedSet" ng-change="vm.swapCards()" style="margin: auto;">
+            <option ng-repeat="set in vm.flatCardSets" value="{{set.setGroupNum}}|{{set.setNum}}">{{set.cardSet.fullName}}</option>
+        </select>
+    </md-card>
+
+    <div class="center">
+        <card-display title="Mythic Cards ({{vm.cards.mythicCards.length}})"
+                      cards="vm.cards.mythicCards" />
+    </div>
+    <div class="center">
+        <card-display title="Rare Cards ({{vm.cards.rareCards.length}})"
+                      cards="vm.cards.rareCards" />
+    </div>
+    <div class="center">
+        <card-display title="Uncommon Cards ({{vm.cards.uncommonCards.length}})"
+                      cards="vm.cards.uncommonCards" />
+    </div>
+    <div class="center">
+        <card-display title="Common Cards ({{vm.cards.commonCards.length}})"
+                      cards="vm.cards.commonCards" />
+    </div>
+  </div>
+</section>

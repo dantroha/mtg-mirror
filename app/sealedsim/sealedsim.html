@@ -1,0 +1,62 @@
+﻿<section data-ng-controller="sealedsim as vm">
+
+  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
+
+  <div class="graphColumn center fullLengthCol">
+    <pool-summary-charts top-card-stats-title="'Card pool stats'"
+                         top-graph-cards="vm.boosterCards"
+                         bottom-card-stats-title="'Selected cards stats'"
+                         bottom-graph-cards="vm.selectedCards"
+                         controller-id="vm.controllerId"
+                         charts-hidden="vm.chartsHidden" />
+  </div>
+
+
+  <div class="cardColumn center fullLengthCol" ng-class="{'fullWidth': vm.chartsHidden}">
+
+    <set-selection set-groups="vm.setGroups">
+       <div class="elementSpacing">
+           <select ng-options="item.value as item.text for item in vm.promo_options" ng-model="vm.include_promo">
+           </select>
+       </div>
+
+       <md-button ng-click="vm.openBoosters()" class="md-raised md-primary medBtn elementSpacing" aria-label="Open boosters">
+         Open boosters
+       </md-button>
+    </set-selection>
+
+    <div>
+      <card-display card-click="vm.addToDeck(card)"
+                    cards="vm.boosterCards"
+                    land-cards="vm.landcards"
+                    land-card-click="vm.addLandCard(card)"
+                    title="Cards from packs ({{vm.boosterCards.length}})"
+                    show-save="true"
+                    allow-sorting="true"
+                    allow-filters="true" />
+    </div>
+
+    <div>
+      <card-display card-click="vm.removeFromDeck(card)"
+                    cards="vm.selectedCards"
+                    land-cards="vm.selectedLandCards"
+                    land-card-click="vm.removeLandCard(card)"
+                    title="Selected cards ({{vm.selectedCards.length + vm.selectedLandCards.length}})"
+                    clear-function="vm.clearSelection()"
+                    show-save="true"
+                    allow-test-hands="true"
+                    allow-sorting="true"
+                    allow-filters="true" />
+    </div>
+  </div>
+
+  <options-menu set-groups="vm.setGroups">
+    <md-button aria-label="Toggle charts" ng-click="vm.toggleCharts()" class="md-raised md-primary medBtn mdUp">Toggle charts</md-button>
+    <md-button aria-label="Save complete pool" ng-click="vm.saveCompletePool()" class="md-raised md-primary medBtn">Save complete pool</md-button>
+    <hand-simulator selected-cards="vm.selectedCards"
+                    selected-land-cards="vm.selectedLandCards"
+                    controller-id="{{vm.controllerId}}" />
+  </options-menu>
+
+</section>

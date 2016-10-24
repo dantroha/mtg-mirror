@@ -1,0 +1,30 @@
+<div ng-controller="startScreen">
+
+  <div class="mainSplash fullLengthCol realFullLength">
+
+    <md-card class="card bigCard">
+
+      <div class="mainText center">
+        <h2 class="bolderText">MTG Mirror</h2>
+        <h3>Magic the Gathering Drafts and Sealed Simulator</h3>
+        <h3>Kaladesh</h3>
+      </div>
+
+      <div class="mainImage center">
+          <img src="mtghomepagecards.png" class="widthAuto marginAuto" alt="Selection of MTG Cards"/>
+      </div>
+
+      <div class="mainBtns center">
+        <md-button class="md-raised md-primary bigBtn" ng-click="navigateToLocation('draftsim')">
+          Draft Simulator
+        </md-button>
+        <md-button class="md-raised md-primary bigBtn" ng-click="navigateToLocation('sealedsim')">
+          Sealed Simulator
+        </md-button>
+      </div>
+
+    </md-card>
+
+  </div>
+
+</div>

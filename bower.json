@@ -1,0 +1,24 @@
+{
+  "name": "MTGMirrorSplash",
+  "authors": [
+    "chrisberry4545 <chrisberry222@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.11.4",
+    "angular-route": "~1.4.7",
+    "Chart.js": "~1.0.2",
+    "roboto-fontface": "~0.4.3"
+  }
+}

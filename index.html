@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./dist/app.css" />
+
+  <style>.ng-hide {display:none !important;}</style>
+
+  <link rel="icon" type="image/png" href="/mtgmirrorfavicon.png">
+
+  <title>MTG Mirror - Kaladesh Draft and Sealed Simulator</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MTG Draft Simulator and Sealed Simulator">
+  <meta name="keywords" content="MTG, Magic the gathering, KLD, Kaladesh, draft, booster, simulator, mtgmirror, mirror">
+  <meta name="author" content="Chris Berry">
+
+
+</head>
+<body ng-app="mtgApp">
+
+  <div ng-controller="sidebar">
+    <md-toolbar md-scroll-shrink ng-if="true" class="topBanner">
+      <div class="md-toolbar-tools">
+        <div class="topNavTitle">
+          <button class="iconBtn inlineBlock" ng-click="toggleMenu()">
+            <i class="fa fa-bars white"></i>
+          </button>
+          <h2 class="inlineBlock">
+            <a href="#/">
+              MTG Mirror
+            </a>
+          </h2>
+        </div>
+        <div class="topNavLinks ng-hide" ng-show="true">
+          <div class="topNavLinksFloat">
+            <md-button ng-href="#{{r.url}}" data-ng-class="isCurrent(r)" class="topNavSpan topNavRoute menuItem" data-ng-repeat="r in topNavRoutes">
+              {{r.config.settings.content}}
+            </md-button>
+          </div>
+        </div>
+      </div>
+      <div class="loadingRoute" ng-show="routeLoading">
+        <div class="centerInParent">
+          <div class="pulse-loader"></div>
+        </div>
+      </div>
+    </md-toolbar>
+
+    <md-sidenav ng-show="true" class="md-sidenav-left md-whiteframe-z2 ng-hide" md-component-id="nav">
+
+        <md-toolbar class="md-theme-light">
+          <h2 class="md-toolbar-tools">Menu</h2>
+          <md-button ng-click="toggleMenu()" aria-label="Close menu" class="md-primary closeSideBar">
+            <i class="fa fa-close"></i>
+          </md-button>
+        </md-toolbar>
+        <md-content class="menuList">
+          <a data-ng-repeat="r in navRoutes" href="#{{r.url}}" data-ng-class="isCurrent(r)" class="menuItem" >
+            {{r.config.settings.content}}
+          </a>
+        </md-content>
+
+    </md-sidenav>
+  </div>
+
+  <div ng-hide="true">
+    <h1>
+      MTG Mirror - Kaladesh Draft and Sealed Simulator
+    </h1>
+    <h2>Loading...</h2>
+  </div>
+
+  <div ng-view></div>
+
+  <div ng-controller="appcache">
+    <div class="appCacheWarnings appUpdated ng-hide fade" ng-show="appUpdated">
+        <div ng-click="refreshApp()">
+          A new version of the app is avaliable. <br />
+          <em>Refresh to start using it!</em>
+        </div>
+        <md-button ng-click="closeAppUpdatedWarning()" class="md-primary closeWarnings" aria-label="Close warnings">
+          <i class="fa fa-close white"></i>
+        </md-button>
+    </div>
+    <div class="appCacheWarnings appIsUpdating ng-hide fade" ng-show="appIsUpdating">
+        <span>Initialising a new version of the app.</span><br />
+        <span>This usually takes around a minute.</span>
+        <md-button ng-click="closeAppLoadingWarning()" class="md-primary closeWarnings" aria-label="Close warnings">
+          <i class="fa fa-close white"></i>
+        </md-button>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-47296152-1']);
+      _gaq.push(['_setDomainName', 'mtgmirror.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      function trackPageView(page, eventName, label) {
+          trackAction('_trackPageview', page, eventName, label);
+      }
+      function trackEvent(page, eventName, label) {
+          trackAction('_trackEvent', page, eventName, label);
+      }
+      function trackAction(actionType, page, eventName, label) {
+          _gaq.push([actionType, page, eventName, label])
+      }
+  </script>
+
+  <script type="text/javascript" src="./dist/js/vendor.min.js"></script>
+  <script type="text/javascript" src="./dist/js/app.min.js"></script>
+  <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</body>
+
+</html>

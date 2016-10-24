@@ -1,0 +1,16 @@
+﻿<section class="mainbar" data-ng-controller="boostersim as vm">
+  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
+  <div class="fullLengthCol">
+    <div class="center">
+        <set-selection set-groups="vm.setGroups">
+            <md-button aria-label="Open boosters" ng-click="vm.openBoosters()" class="md-raised md-primary medBtn elementSpacing">Open boosters</md-button>
+        </set-selection>
+    </div>
+
+    <div class="center">
+      <card-display cards="vm.cards" title="Opened Cards ({{vm.cards.length}})" allow-filters="true"/>
+    </div>
+  </div>
+
+</section>

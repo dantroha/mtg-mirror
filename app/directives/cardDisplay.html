@@ -1,0 +1,79 @@
+<md-card class="card cardPanelCard cardMargins">
+    <h3 class="cardPanelTitle">{{title}}</h3>
+    <md-button ng-disabled="cards.length + landCards.length == 0" ng-if="showClear()" class="clearBtn" ng-click="clearFunction()" aria-label="Clear selection">
+      Clear
+      <md-tooltip md-direction="bottom">
+          Clear selection
+      </md-tooltip>
+    </md-button>
+    <md-button ng-if="showSave == 'true'" class="saveBtn" ng-click="saveSelection()" aria-label="Save selection">
+      <md-tooltip md-direction="bottom">
+          Download as .txt file
+      </md-tooltip>
+      <md-icon class="fa fa-download fa-2x"></md-icon>
+    </md-button>
+
+
+    <p ng-if="instructions != null">
+        {{instructions}}
+    </p>
+
+    <div ng-if="allowTestHands == 'true'">
+      <hand-simulator selected-cards="cards"
+                      selected-land-cards="landCards"
+                      is-enabled="true" />
+    </div>
+
+    <!-- <div ng-if="allowSorting == 'true'">
+        <md-button ng-click="sortByCost()">Cost</md-button>
+        <md-button ng-click="sortByColor()">Color</md-button>
+        <md-button ng-click="sortByType()">Type</md-button>
+    </div> -->
+
+    <div class="c-filter" ng-if="allowFilters == 'true'">
+        <div class="c-filter__inner">
+            <md-button ng-click="toggleFilters()">Filters <i ng-class="!filtersVisible ? 'fa-chevron-down': 'fa-chevron-up'" class="fa"></i></md-button>
+            <md-button class="c-filter__clear-btn c-filter__btn--active" ng-show="filtersApplied" ng-click="clearFilters()">Clear filters</md-button>
+            <div ng-show="filtersVisible" class="c-filter_all-filters">
+                <div class="c-filter__group" ng-repeat="filterGroup in filters">
+                    <md-button class="c-filter__btn" ng-class="{'md-primary c-filter__btn--active': filterGroup.filters.indexOf(filter.value) > -1}" ng-repeat="filter in filterGroup.possibleFilters" ng-click="filter.filterFunc()">{{filter.label}}</md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="" ng-repeat="(sectionTitle, sortedSection) in cardsToDisplay">
+            <h3>{{sectionTitle}}</h3>
+            <ul class="card-list">
+                <li ng-repeat ="card in sortedSection track by $index">
+                    <div class="imgHolder">
+                      <img ng-mouseover="card.isReversed = true" ng-mouseout="card.isReversed = false"  ng-click="cardDisplayClicked(card)" ng-src="{{card.ReverseImage != null && card.isReversed?card.ReverseImage:card.Image}}" class="mtgCard" alt="{{card.Name}}" />
+                      <md-button ng-show="card.ReverseImage" class="md-fab md-primary mtgCard__flipper" ng-click="reverseCard(card)" aria-label="Flip card">
+                        <md-icon class="fa fa-repeat fa-2x"></md-icon>
+                      </md-button>
+                    </div>
+
+                    <span ng-mouseover="card.isReversed = true" ng-mouseout="card.isReversed = false" ng-click="cardDisplayClicked(card)" ng-if="card.isFoil == true" class="foil">FOIL</span>
+                    <span ng-mouseover="card.isReversed = true" ng-mouseout="card.isReversed = false"  ng-click="cardDisplayClicked(card)" ng-if="card.isUsed == true" class="foil">USED</span>
+                </li>
+            </ul>
+            <div ng-show="!sortedSection.length">
+                No cards in this section
+            </div>
+        </div>
+        <div ng-show="landCards.length">
+            <h3>Land</h3>
+            <ul class="card-list">
+                <li data-ng-repeat="card in landCards track by $index">
+                    <div class="imgHolder">
+                      <img ng-click="landCardClick({card: card})" src="{{card.Image}}" class="mtgCard" alt="{{card.Name}}" />
+                    </div>
+                    <span ng-click="landCardClick({card: card})" data-ng-if="card.isFoil == true && !card.isUsed" class="foil">FOIL</span>
+                    <span ng-click="cardClick({card: card})" ng-if="card.isUsed == true" class="foil">USED</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</md-card>

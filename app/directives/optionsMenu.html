@@ -1,0 +1,35 @@
+
+<md-button class="md-fab md-primary iconBtn bottomFloatingBtn" aria-label="Show additional options" ng-click="displayExtraOptions()">
+  <md-icon class="fa fa-cogs fa-2x white centerIcon"></md-icon>
+  <md-tooltip md-direction="top">
+      More options
+  </md-tooltip>
+</md-button>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="options" ng-click="closeOptions($event)">
+
+    <md-toolbar class="md-theme-light">
+      <h2 class="md-toolbar-tools">Options</h2>
+      <md-button ng-click="displayExtraOptions()" class="md-primary closeSideBar" aria-label="Close additional options">
+        <i class="fa fa-close white"></i>
+      </md-button>
+    </md-toolbar>
+    <md-content layout-padding class="center">
+
+      <div ng-repeat="setGroup in setGroups">
+          <div ng-repeat="set in setGroup">
+              <label for="setSelectionInput{{set.shortName}}">
+                  {{set.fullName}}
+              </label>
+              <br />
+              <input id="setSelectionInput{{set.shortName}}" type="number" ng-model="set.boostersToOpen" />
+          </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div ng-transclude></div>
+
+    </md-content>
+
+</md-sidenav>

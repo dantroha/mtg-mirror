@@ -1,0 +1,4 @@
+# mtg-mirror
+
+#### Setup
+todo
