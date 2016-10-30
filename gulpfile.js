@@ -32,7 +32,7 @@ var displayError = function(error) {
     // This will output an error like the following:
     // [gulp-sass] error message in file_name on line 1
     console.error(errorString);
-}
+};
 
 // Setting up the sass task
 gulp.task('sass', function (){

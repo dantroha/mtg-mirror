@@ -18,20 +18,22 @@
     "serve-static": "^1.10.0"
   },
   "devDependencies": {
+    "bower": "^1.7.9",
     "gulp-gm": "0.0.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "prestart": "npm install && bower install",
+    "start": "gulp && node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisberry4545/MTGWebV2.git"
+    "url": "git+https://github.com/dantroha/mtg-mirror.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisberry4545/MTGWebV2/issues"
+    "url": "https://github.com/dantroha/mtg-mirror/issues"
   },
-  "homepage": "https://github.com/chrisberry4545/MTGWebV2#readme"
+  "homepage": "http://mtgmirror.com/#/"
 }
