@@ -1,4 +1,11 @@
 # mtg-mirror
 
 #### Setup
-todo
+
+'npm install -g gulp'
+
+`npm install`
+
+`bower install`
+
+`node server.js`
