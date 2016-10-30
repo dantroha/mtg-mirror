@@ -18,11 +18,13 @@
     "serve-static": "^1.10.0"
   },
   "devDependencies": {
+    "bower": "&^1.7.9",
     "gulp-gm": "0.0.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "prestart": "npm install && bower install",
+    "start": "gulp && node server.js"
   },
   "repository": {
     "type": "git",
