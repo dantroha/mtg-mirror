@@ -7,6 +7,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
+var karmaServer = require('karma').Server;
 
 var paths = {
   styles: {
@@ -194,21 +195,35 @@ gulp.task('watch', function() {
         );
     });
 
-    // gulp.watch(['./app/**/*.js', './app/*.js'], ['scripts']);
+    gulp.watch(['./app/**/*.js', './app/*.js'], ['scripts', 'tdd']);
+});
+
+gulp.task('test', function (done) {
+    new karmaServer({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
+ // Watch for file changes and re-run tests on each change
+gulp.task('tdd', function (done) {
+    new karmaServer({
+        configFile: __dirname + '/karma.conf.js'
+    }, done).start();
 });
 
 // This is the default task - which is run when `gulp` is run
 // The tasks passed in as an array are run before the tasks within the function
 gulp.task('default', ['sass', 'scripts', 'vendor-scripts'], function() {
     // Watch the files in the paths object, and when there is a change, fun the functions in the array
-    // gulp.watch(paths.styles.files, ['sass'])
+    gulp.watch(paths.styles.files, ['sass'])
     // // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
-    // .on('change', function(evt) {
-    //     console.log(
-    //         '[watcher] File ' + evt.path.replace(/.*(?=sass)/,'') + ' was ' + evt.type + ', compiling...'
-    //     );
-    // });
-    //
-    // gulp.watch(['./app/**/*.js', './app/*.js'], ['scripts']);
+    .on('change', function(evt) {
+        console.log(
+            '[watcher] File ' + evt.path.replace(/.*(?=sass)/,'') + ' was ' + evt.type + ', compiling...'
+        );
+    });
+
+    gulp.watch(['./app/**/*.js', './app/*.js'], ['scripts', 'tdd']);
 
 });
