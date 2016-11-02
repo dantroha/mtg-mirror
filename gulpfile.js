@@ -157,7 +157,7 @@ gulp.task('scripts-dev', function(cb) {
 
   gulp.src(scripts)
         .pipe(concat('app.min.js'))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/js'));
 
   gulp.src(vendorScripts)
         .pipe(concat('vendor.js'))

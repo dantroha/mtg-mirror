@@ -1,17 +1,17 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'boostersim';
-    angular.module('mtgApp').controller(controllerId, ['logger', 'datacontext', 'localStorageService', boostersim]);
+    angular.module('mtgApp').controller(controllerId, ["logger", 'datacontext', 'localStorageService', boostersim]);
 
-    function boostersim(logger, datacontext, localStorageService) {
+    function boostersim(logger, datacontext) {
         var log = logger.logStandard;
         var logError = log.logError;
 
         var vm = this;
         vm.title = 'Booster Simulator';
         vm.cards = [];
-
         vm.setGroups = [];
+        vm.showExtraOptions = false;
 
         function initSetGroups() {
             datacontext.getCardSetGroups().then(function (data) {
@@ -20,14 +20,9 @@
             });
         }
 
-        vm.showExtraOptions = false;
         vm.displayExtraOptions = function () {
-            if (vm.showExtraOptions) {
-                vm.showExtraOptions = false;
-            } else {
-                vm.showExtraOptions = true;
-            }
-        }
+            vm.showExtraOptions = !vm.showExtraOptions;
+        };
 
         vm.openBoosters = function()
         {
@@ -38,9 +33,7 @@
             vm.cards.push.apply(vm.cards, cardsToUse.rareCards);
             vm.cards.push.apply(vm.cards, cardsToUse.uncommonCards);
             vm.cards.push.apply(vm.cards, cardsToUse.commonCards);
-
-            return;
-        }
+        };
 
         activate();
 
