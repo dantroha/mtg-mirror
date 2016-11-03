@@ -1,9 +1,10 @@
 ﻿<section data-ng-controller="sealedsim as vm">
 
-  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
 
 
   <div class="graphColumn center fullLengthCol">
+
     <pool-summary-charts top-card-stats-title="'Card pool stats'"
                          top-graph-cards="vm.boosterCards"
                          bottom-card-stats-title="'Selected cards stats'"
@@ -14,7 +15,7 @@
 
 
   <div class="cardColumn center fullLengthCol" ng-class="{'fullWidth': vm.chartsHidden}">
-
+      <div ng-include data-src="'/app/adverts/adverts.html'"></div>
     <set-selection set-groups="vm.setGroups">
        <div class="elementSpacing">
            <select ng-options="item.value as item.text for item in vm.promo_options" ng-model="vm.include_promo">

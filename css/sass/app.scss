@@ -124,7 +124,7 @@ $advertSectionHeight: 100px;
   position: relative;
   border-bottom: 1px solid $darkColor;
 
-  @media(min-width: $mdWidth) {
+  @media(min-width: 0px) {
     display: block;
   }
 
@@ -303,7 +303,7 @@ $graphColumnWidth: 425px;
   overflow-y:scroll;
 
   @media(min-width: $mdWidth) {
-    max-height: calc(100vh - #{$advertSectionHeight + $topBannerHeight});
+    max-height: calc(100vh - #{$topBannerHeight});
   }
 
   &.advertClosed {
