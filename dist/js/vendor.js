@@ -318,7 +318,7 @@ PATTERNS:[{gSize:3,lgSize:3,maxFrac:3,minFrac:0,minInt:1,negPre:"-",negSuf:"",po
 //# sourceMappingURL=angular.min.js.map
 
 /*
- AngularJS v1.4.12
+ AngularJS v1.4.14
  (c) 2010-2015 Google, Inc. http://angularjs.org
  License: MIT
 */

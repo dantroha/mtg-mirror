@@ -1,8 +1,9 @@
 ﻿<section data-ng-controller="browsecards as vm">
 
-  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
 
   <div class="fullLengthCol">
+      <div ng-include data-src="'/app/adverts/adverts.html'"></div>
     <md-card class="card center" style="margin: 1rem;">
         <select ng-model="vm.selectedSet" ng-change="vm.swapCards()" style="margin: auto;">
             <option ng-repeat="set in vm.flatCardSets" value="{{set.setGroupNum}}|{{set.setNum}}">{{set.cardSet.fullName}}</option>

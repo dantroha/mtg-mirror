@@ -1,9 +1,10 @@
 <section data-ng-controller="draftsim as vm">
 
-  <div ng-include data-src="'/app/adverts/adverts.html'"></div>
+
 
 
   <div class="graphColumn center fullLengthCol">
+
     <pool-summary-charts top-card-stats-title="vm.cardStatsTitle"
                         top-graph-cards="vm.cardsToGraph"
                          controller-id="vm.controllerId"
@@ -12,7 +13,7 @@
 
 
   <div class="cardColumn center fullLengthCol" ng-class="{'fullWidth': vm.chartsHidden }">
-
+      <div ng-include data-src="'/app/adverts/adverts.html'"></div>
       <set-selection set-groups="vm.setGroups">
         <md-button aria-label="Restart draft" ng-click="vm.startDraft()" class="md-raised md-primary medBtn elementSpacing">
             <span ng-hide="vm.draftStarted">Start draft</span>
