@@ -91,3 +91,4 @@ fabric.properties
 .gitignore
 .idea/
 /mtg-mirror.iml
+.bowerrc

@@ -15,11 +15,12 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'app/**/*.js': ['coverage']
+            'app/**/*.js': ['coverage'],
+            'dist/**/*.js': ['coverage']
         },
 
         overageReporter: {
-            dir: 'jasmineReports/',
+            dir: 'jasmine-reports/',
             reporters: [
                 {type: 'html', subdir: 'report-html', includeAllSources: true},
                 {type: 'cobertura', subdir: 'report-cobertura', includeAllSources: true}
